@@ -1,0 +1,50 @@
+﻿<header >
+@*This is from bootswatch.com *@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+<div class="container-fluid" >
+<a class="navbar-brand" href="#" > Dukan Habesha</a >
+@*<img src="~/images/DukanHabesha.png" width="5%" alt="Logo" / > *@
+@* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" >
+<span class="navbar-toggler-icon" > </span >
+</button > *@
+
+<div class="collapse navbar-collapse" id="navbarColor02" >
+<ul class="navbar-nav me-auto" >
+<li class="nav-item" >
+<a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index" > Home</a >
+<li class="nav-item" >
+<a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Privacy" > Privacy</a >
+
+@if (User.IsInRole(SD.Role_Admin)) {
+    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Content Management System</a> <div class="dropdown-menu"> <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a> <a class="dropdown-item" asp-area="Admin" asp-controller="Origin" asp-action="Index">Country Made</a> <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Products List</a> <div class="dropdown-divider"> </div> <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create New User</a> </div> </li>
+}
+
+<li class="nav-item" >
+<a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index" >
+Manage Orders
+</a >
+
+</li >
+
+
+<li class="nav-item" >
+<a class="nav-link" asp-area="Customer" asp-controller="Cart" asp-action="Index" >
+@await Component.InvokeAsync("ShoppingCart")
+</a >
+
+</li >
+
+
+</ul >
+@*the below code is a patial page drived from identity library and this page is found right with shared folder in View*@
+<partial name="_LoginPartial" / >
+
+@* <form class="d-flex" >
+<input class="form-control me-sm-2" type="text" placeholder="Search" >
+<button class="btn btn-secondary my-2 my-sm-0" type="submit" > Search</button >
+</form > *@
+</div >
+</div >
+</nav >
+</header >

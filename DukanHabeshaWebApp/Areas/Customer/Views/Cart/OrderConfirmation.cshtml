@@ -1,0 +1,19 @@
+﻿@using DukanHabeshaWebApp
+@model int
+
+<div class="container row pt-4">
+    <div class="col-12 text-center">
+        <h1 class="text-primary text-center">Order Placed Successfully!</h1>
+        Your Order Number is : @Model <br /><br />
+        <img src="~/images/Thank_You.jpg" width="65%" />
+    </div>
+    <div class="col-12 text-center" style="color:maroon">
+        <br />
+        Your order has been placed successfully! <br />
+
+         <div class="col-6 text-end">
+			<a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-sm">Continue Shopping</a>
+		</div>
+        
+    </div>
+</div> 
